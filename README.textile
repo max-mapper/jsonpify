@@ -1,0 +1,17 @@
+h1. JSONP-ifier!!!!!
+
+h2. Turns any JSON API into a JSONP API through the magic of proxying
+
+So you are trying to AJAX some JSON, right? And you run into the single origin policy? And the JSON API that you're hitting hasn't implemented JSONP? Dang! Here's an example of what you might do:
+
+    $.getJSON("http://api.plancast.com/02/plans/show.json?attendance_id=7vl", function(data) { doStuffWith(data)});
+
+Fret not, young internet warrior! You can wrap that little puppy in a JSONPify URL for maximum JSONPification!
+
+    $.ajax({                                                                                      
+      url: "http://jsonpify.heroku.com?resource=http://api.plancast.com/02/plans/show.json?=7vl",  
+      dataType: 'jsonp',                                                                          
+      success: function(data){                                                                    
+        // manipulate data                                                                        
+      }                                                                                           
+    });
