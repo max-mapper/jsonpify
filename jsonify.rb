@@ -1,5 +1,5 @@
 get '/' do
-  haml :index
+  'hay guys'
 end
 
 get "/:resource" do
