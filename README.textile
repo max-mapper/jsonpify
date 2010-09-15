@@ -1,3 +1,5 @@
+h1. THIS ISN'T FINISHED QUITE YET, SO DON'T EXPECT IT TO WORK
+
 h1. JSONP-ifier!!!!!
 
 h2. Turns any JSON API into a JSONP API through the magic of proxying
