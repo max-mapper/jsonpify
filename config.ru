@@ -1,8 +1,7 @@
 require 'sinatra'
-require 'jsonify'
 require 'httparty'
 require 'crack'
 require 'haml'
 require 'json'
-require 'ap'
+require 'jsonpify'
 run Sinatra::Application

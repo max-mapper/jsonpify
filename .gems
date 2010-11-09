@@ -1,3 +1,5 @@
 sinatra
 httparty
 crack
+haml
+json
