@@ -8,6 +8,8 @@ So you are trying to AJAX some JSON, right? And you run into the single origin p
 
     $.getJSON("http://api.plancast.com/02/plans/show.json?attendance_id=7vl", function(data) { doStuffWith(data)});
 
+But instead of precious data, you would receive nasty CSRF error!
+
 Fret not, young internet warrior! You can wrap that little puppy in a JSONPify URL for maximum JSONPification!
 
     $.ajax({                                                                                      
