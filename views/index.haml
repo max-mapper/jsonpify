@@ -10,6 +10,8 @@
       %pre
         $.getJSON("http://api.plancast.com/02/plans/show.json?attendance_id=7vl", function(data) { doStuffWith(data)});
     %p
+      But instead of precious data, you would receive nasty CSRF error!
+    %p
       Fret not, young internet warrior! You can wrap that little puppy in a JSONPify URL for maximum JSONPification!
       %pre
         :preserve                                                                                          
@@ -20,3 +22,8 @@
               // manipulate data                                                                        
             }                                                                                           
           });
+          
+    .download{:style => 'position: absolute; bottom: 0px; right: 5px; font-size: 11px; margin: 1em 0px;'}
+      2010 Max Ogden.
+      %a{:href => "http://github.com/maxogden/jsonpify", :style => "color: #44B7C6"}
+        Get the source on Github
