@@ -1,4 +1,5 @@
 sinatra
+RedCloth
 httparty
 crack
 haml
