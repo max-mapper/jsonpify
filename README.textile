@@ -3,27 +3,28 @@ h1. JSONP-ifier!!!!!
 h2. Turns any JSON API into a JSONP API through the magic of proxying
 
 So you are trying to AJAX some JSON, right? And you run into the single origin policy? And the JSON API that you're hitting hasn't implemented JSONP? Dang! Here's an example of what you might do:
-
-    $.getJSON("http://api.plancast.com/02/plans/show.json?attendance_id=7vl", function(data) { doStuffWith(data)});
+    
+bc.  $.getJSON("http://api.plancast.com/02/plans/show.json?attendance_id=7vl", function(data) { doStuffWith(data)});
 
 But instead of precious data, you would receive nasty CSRF error!
 
 Fret not, young internet warrior! You can wrap that little puppy in a JSONPify URL for maximum JSONPification!
 
-    $.ajax({                                                                                      
-      url: "http://jsonpify.heroku.com?resource=http://api.plancast.com/02/plans/show.json?=7vl",  
-      dataType: 'jsonp',                                                                          
-      success: function(data){                                                                    
-        // manipulate data                                                                        
-      }                                                                                           
-    });
+bc.   $.ajax({                                                                                      
+    url: "http://jsonpify.heroku.com?resource=http://api.plancast.com/02/plans/show.json?=7vl",  
+    dataType: 'jsonp',                                                                          
+    success: function(data){                                                                    
+      // manipulate data                                                                        
+    }                                                                                           
+  });
+    
     
 h2. Additional feature! HTML proxy!
 
 If you are trying to GET a chunk of HTML that should have a @content_type@ of 'text/html' but it instead comes across as 'text/plain', you can specify a @html@ parameter containing the URL of your HTMLs and you will receive your datas with the correct @content_type@.
 
-    curl -X GET https://gist.github.com/raw/582915/index.html
-    => returns with a @content_type@ of 'text/plain'
+bc.  curl -X GET https://gist.github.com/raw/582915/index.html
+  => returns with a @content_type@ of 'text/plain'
   
-    curl -X GET http://jsonpify.heroku.com?http=gist.github.com/raw/582915/index.html
-    => returns with a @content_type@ of 'text/html'
+bc.  curl -X GET http://jsonpify.heroku.com?http=gist.github.com/raw/582915/index.html
+  => returns with a @content_type@ of 'text/html'
