@@ -6,6 +6,9 @@ get '/' do
     response = HTTParty.get(params[:resource]) rescue httparty_error
     response = response.parsed_response rescue httparty_error
     return "#{params[:callback]}(#{response.to_json})"
+  elsif params[:html]
+    content_type 'text/html'
+    return HTTParty.get(params[:html]).parsed_response
   else
     haml :index
   end
