@@ -13,7 +13,7 @@ get '/' do
   end
 end
 
-get '/http' do
+get '/html' do
   if params['resource']
     content_type 'text/html'
     httparty_error = "HTTParty Error!"
