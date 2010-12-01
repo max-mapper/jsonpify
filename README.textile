@@ -17,14 +17,3 @@ bc.   $.ajax({
       // manipulate data                                                                        
     }                                                                                           
   });
-    
-    
-h2. Additional feature! HTML proxy!
-
-If you are trying to GET a chunk of HTML that should have a @content_type@ of 'text/html' but it instead comes across as 'text/plain', you can specify a @html@ parameter containing the URL of your HTMLs and you will receive your datas with the correct @content_type@.
-
-bc.  curl -X GET https://gist.github.com/raw/582915/index.html
-  => returns with a @content_type@ of 'text/plain'
-  
-bc.  curl -X GET http://jsonpify.heroku.com?http=gist.github.com/raw/582915/index.html
-  => returns with a @content_type@ of 'text/html'
