@@ -20,3 +20,13 @@ bc.   $.ajax({
       // manipulate data                                                                        
     }                                                                                           
   });
+
+h2. Installation
+
+Clone this repository, then run:
+
+```bash
+$ rackup
+```
+
+Then, open `http://localhost:9292/`.
