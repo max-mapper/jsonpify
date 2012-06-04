@@ -25,8 +25,6 @@ h2. Installation
 
 Clone this repository, then run:
 
-```bash
-$ rackup
-```
+bc. $ rackup
 
-Then, open `http://localhost:9292/`.
+Then, open <code>http://localhost:9292/</code>.
